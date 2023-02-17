@@ -1,30 +1,27 @@
 import React, { useEffect } from 'react'
 
 const App = () => {
-  const tele = window.Telegram.WebApp;
+  const tg = window.Telegram.WebApp;
 
   useEffect(() => {
-    tele.ready();
+    tg.ready();
   }, [])
 
   const testInit = () => {
-    alert(tele.initData)
+    alert(tg.initData)
   }
 
   const testInitUserName = () => {
-    alert(tele.initDataUnsafe.user.first_name)
+    alert(tg.initDataUnsafe.user.first_name)
   }
 
   return (
     <div>
       <button onClick={testInit}>testInit</button>
       <button onClick={testInitUserName}>testInitUserName</button>
-      <p>{tele.initDataUnsafe?.user?.id}</p>
-      <p>{tele.initDataUnsafe?.user?.isBot}</p>
-      <p>{tele.initDataUnsafe?.user?.first_name}</p>
-      <p>{tele.initDataUnsafe?.user?.last_name}</p>
-      <p>{tele.initDataUnsafe?.user?.username}</p>
-      <p>{tele.initDataUnsafe?.user?.language_code}</p>
+      <span>{tg.initDataUnsafe?.user?.username}</span>
+      <span>{tg.initDataUnsafe?.user?.first_name}</span>
+      <span>{tg.initDataUnsafe?.user?.last_name}</span>
     </div>
   )
 }
