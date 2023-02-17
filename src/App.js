@@ -12,13 +12,19 @@ const App = () => {
   }
 
   const testInitUserName = () => {
-    alert(tele.initData?.user?.first_name)
+    alert(tele.initDataUnsafe.user.first_name)
   }
 
   return (
     <div>
       <button onClick={testInit}>testInit</button>
       <button onClick={testInitUserName}>testInitUserName</button>
+      <p>{tele.initDataUnsafe.user.id}</p>
+      <p>{tele.initDataUnsafe.user.isBot}</p>
+      <p>{tele.initDataUnsafe.user.first_name}</p>
+      <p>{tele.initDataUnsafe.user.last_name}</p>
+      <p>{tele.initDataUnsafe.user.username}</p>
+      <p>{tele.initDataUnsafe.user.language_code}</p>
     </div>
   )
 }
