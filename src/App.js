@@ -5,6 +5,7 @@ const App = () => {
   return (
     <div className='container'>
       <button onClick={() => alert(tg.colorScheme)}>test dark</button>
+      <p>{tg?.initDataUnsafe?.user?.id}</p>
     </div>
   )
 }
